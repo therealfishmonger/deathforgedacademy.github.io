@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deathforged Academy</title>
+  <meta name="description" content="Mastery-focused Death Knight training for Blood, Frost, and Unholy." />
+
+  <style>
+    :root {
+      --bg: #0B0B0B;
+      --fg: #FFFFFF;
+      --muted: #CFCFCF;
+      --line: #1F1F1F;
+      --accent: #8B0000;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    h1, h2, h3 {
+      letter-spacing: 0.05em;
+    }
+
+    /* NAV */
+    nav {
+      border-bottom: 1px solid var(--line);
+      background: var(--bg);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links a {
+      margin-left: 24px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--fg);
+    }
+
+    /* SECTIONS */
+    section {
+      border-top: 1px solid var(--line);
+      padding: 80px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 14px 28px;
+      background: var(--accent);
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      gap: 48px;
+      margin-top: 48px;
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand">DEATHFORGED ACADEMY</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#classes">Classes</a>
+        <a href="#logs">Log Reviews</a>
+        <a href="#certification">Certification</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="container center">
+      <h1>TRAIN LIKE A DEATH KNIGHT</h1>
+      <p class="muted">
+        Mastery-focused training for Blood, Frost, and Unholy.
+        Built for Mythic+ and Raiding. Designed for consistency.
+      </p>
+      <a class="cta" href="#classes">View Classes</a>
+    </div>
+  </section>
+
+  <!-- CLASSES -->
+  <section id="classes">
+    <div class="container">
+      <h2 class="center">DEATH KNIGHT MASTER CLASSES</h2>
+
+      <div class="grid">
+        <div>
+          <h3>BLOOD</h3>
+          <p class="muted">
+            Tank mastery focused on cooldown layering, pull planning,
+            and damage window control.
+          </p>
+        </div>
+
+        <div>
+          <h3>FROST</h3>
+          <p class="muted">
+            Burst damage execution built on resource discipline
+            and repeatable cooldown alignment.
+          </p>
+        </div>
+
+        <div>
+          <h3>UNHOLY</h3>
+          <p class="muted">
+            Sustained damage mastery driven by setup, disease uptime,
+            and pet control.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOG REVIEWS -->
+  <section id="logs">
+    <div class="container">
+      <h2 class="center">PROFESSIONAL LOG REVIEWS</h2>
+
+      <p class="center muted">
+        Stop guessing. Start correcting.
+      </p>
+
+      <div class="grid">
+        <div>
+          <h3>Quick Diagnostic</h3>
+          <p class="muted">
+            Fast identification of the main issues holding you back.
+          </p>
+        </div>
+
+        <div>
+          <h3>Full Review</h3>
+          <p class="muted">
+            Complete breakdown of execution, cooldown usage,
+            and decision-making.
+          </p>
+        </div>
+
+        <div>
+          <h3>Coaching Review</h3>
+          <p class="muted">
+            Recorded or live walkthrough with explanation and correction.
+          </p>
+        </div>
+      </div>
+
+      <div class="center">
+        <a class="cta" href="mailto:deathforgedacademy@gmail.com">
+          Request a Log Review
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATION -->
+  <section id="certification">
+    <div class="container center">
+      <h2>CERTIFICATION</h2>
+      <p class="muted">
+        Formal mastery recognition for Death Knight specializations.
+      </p>
+      <p class="muted">
+        Structured assessments. No hand-waving. No participation trophies.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>No emojis. No slang. No guesswork.</p>
+    <p>© Deathforged Academy</p>
+  </footer>
+
+</body>
+</html>
