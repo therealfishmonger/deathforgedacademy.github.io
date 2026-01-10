@@ -4,15 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deathforged Academy</title>
-  <meta name="description" content="Mastery-focused Death Knight training for Blood, Frost, and Unholy." />
+  <meta name="description" content="Authority-driven Death Knight mastery for Blood, Frost, and Unholy. Structured training and professional log reviews." />
 
   <style>
     :root {
       --bg: #0B0B0B;
+      --bg-soft: #111111;
       --fg: #FFFFFF;
-      --muted: #CFCFCF;
+      --muted: #B5B5B5;
       --line: #1F1F1F;
       --accent: #8B0000;
+      --glow: rgba(139, 0, 0, 0.35);
     }
 
     * {
@@ -21,10 +23,15 @@
 
     body {
       margin: 0;
-      background: var(--bg);
+      background: radial-gradient(circle at top, #141414, var(--bg));
       color: var(--fg);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
-      line-height: 1.6;
+      line-height: 1.65;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     a {
@@ -33,32 +40,41 @@
     }
 
     h1, h2, h3 {
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
+      font-weight: 600;
     }
 
     /* NAV */
     nav {
       border-bottom: 1px solid var(--line);
-      background: var(--bg);
+      background: rgba(11,11,11,0.9);
+      backdrop-filter: blur(6px);
     }
 
     .nav-inner {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 16px 20px;
+      padding: 14px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-weight: 700;
       font-size: 0.85rem;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
+    }
+
+    .nav-brand img {
+      height: 28px;
     }
 
     .nav-links a {
-      margin-left: 24px;
+      margin-left: 28px;
       font-size: 0.85rem;
       color: var(--muted);
     }
@@ -70,11 +86,11 @@
     /* SECTIONS */
     section {
       border-top: 1px solid var(--line);
-      padding: 80px 20px;
+      padding: 96px 24px;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
@@ -86,19 +102,37 @@
       color: var(--muted);
     }
 
+    .hero {
+      padding: 140px 24px;
+      background:
+        radial-gradient(circle at center, var(--glow), transparent 60%);
+    }
+
+    .hero-logo {
+      max-width: 120px;
+      margin: 0 auto 32px;
+      filter: drop-shadow(0 0 18px var(--glow));
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 24px;
+    }
+
     .cta {
       display: inline-block;
-      margin-top: 32px;
-      padding: 14px 28px;
-      background: var(--accent);
-      color: var(--fg);
+      margin-top: 40px;
+      padding: 16px 36px;
+      background: linear-gradient(180deg, #9b0000, #6f0000);
+      box-shadow: 0 0 24px var(--glow);
       font-weight: 600;
+      letter-spacing: 0.08em;
     }
 
     .grid {
       display: grid;
-      gap: 48px;
-      margin-top: 48px;
+      gap: 56px;
+      margin-top: 64px;
     }
 
     @media (min-width: 768px) {
@@ -107,9 +141,15 @@
       }
     }
 
+    .card {
+      background: linear-gradient(180deg, var(--bg-soft), var(--bg));
+      border: 1px solid var(--line);
+      padding: 32px;
+    }
+
     footer {
       border-top: 1px solid var(--line);
-      padding: 40px 20px;
+      padding: 48px 24px;
       text-align: center;
       font-size: 0.85rem;
       color: var(--muted);
@@ -122,7 +162,11 @@
   <!-- NAVIGATION -->
   <nav>
     <div class="nav-inner">
-      <div class="nav-brand">DEATHFORGED ACADEMY</div>
+      <div class="nav-brand">
+        <!-- Replace src with your actual logo file when ready -->
+        <img src="logo.png" alt="Deathforged Academy Logo" />
+        DEATHFORGED ACADEMY
+      </div>
       <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#classes">Classes</a>
@@ -133,14 +177,15 @@
   </nav>
 
   <!-- HERO -->
-  <section id="home">
+  <section id="home" class="hero">
     <div class="container center">
-      <h1>TRAIN LIKE A DEATH KNIGHT</h1>
+      <img class="hero-logo" src="logo.png" alt="Deathforged Academy" />
+      <h1>TRAIN WITH DISCIPLINE.<br>PERFORM WITH CONSISTENCY.</h1>
       <p class="muted">
-        Mastery-focused training for Blood, Frost, and Unholy.
-        Built for Mythic+ and Raiding. Designed for consistency.
+        Deathforged Academy exists for one reason:  
+        to turn Death Knight players into repeatable, reliable performers in Mythic+ and Raiding.
       </p>
-      <a class="cta" href="#classes">View Classes</a>
+      <a class="cta" href="#logs">REQUEST A LOG REVIEW</a>
     </div>
   </section>
 
@@ -150,27 +195,27 @@
       <h2 class="center">DEATH KNIGHT MASTER CLASSES</h2>
 
       <div class="grid">
-        <div>
+        <div class="card">
           <h3>BLOOD</h3>
           <p class="muted">
-            Tank mastery focused on cooldown layering, pull planning,
-            and damage window control.
+            Tank mastery focused on pull planning, cooldown layering,
+            and survivability control under pressure.
           </p>
         </div>
 
-        <div>
+        <div class="card">
           <h3>FROST</h3>
           <p class="muted">
-            Burst damage execution built on resource discipline
-            and repeatable cooldown alignment.
+            Burst damage execution refined through resource discipline,
+            cooldown alignment, and encounter timing.
           </p>
         </div>
 
-        <div>
+        <div class="card">
           <h3>UNHOLY</h3>
           <p class="muted">
-            Sustained damage mastery driven by setup, disease uptime,
-            and pet control.
+            Sustained damage mastery driven by setup discipline,
+            disease uptime, and pet management.
           </p>
         </div>
       </div>
@@ -183,36 +228,38 @@
       <h2 class="center">PROFESSIONAL LOG REVIEWS</h2>
 
       <p class="center muted">
-        Stop guessing. Start correcting.
+        Warcraft Logs do not lie. Most players simply don’t know how to read them correctly.
       </p>
 
       <div class="grid">
-        <div>
-          <h3>Quick Diagnostic</h3>
+        <div class="card">
+          <h3>DIAGNOSTIC REVIEW</h3>
           <p class="muted">
-            Fast identification of the main issues holding you back.
+            A focused analysis identifying the primary execution failures
+            limiting your performance.
           </p>
         </div>
 
-        <div>
-          <h3>Full Review</h3>
+        <div class="card">
+          <h3>FULL PERFORMANCE REVIEW</h3>
           <p class="muted">
-            Complete breakdown of execution, cooldown usage,
-            and decision-making.
+            A complete breakdown of cooldown usage, damage windows,
+            rotational discipline, and decision-making.
           </p>
         </div>
 
-        <div>
-          <h3>Coaching Review</h3>
+        <div class="card">
+          <h3>COACHING REVIEW</h3>
           <p class="muted">
-            Recorded or live walkthrough with explanation and correction.
+            A guided walkthrough of your logs, recorded or live,
+            explaining not just what went wrong — but why.
           </p>
         </div>
       </div>
 
       <div class="center">
         <a class="cta" href="mailto:deathforgedacademy@gmail.com">
-          Request a Log Review
+          REQUEST A REVIEW
         </a>
       </div>
     </div>
@@ -221,21 +268,21 @@
   <!-- CERTIFICATION -->
   <section id="certification">
     <div class="container center">
-      <h2>CERTIFICATION</h2>
+      <h2>CERTIFICATION TRACKS</h2>
       <p class="muted">
-        Formal mastery recognition for Death Knight specializations.
+        Formal recognition for Death Knight mastery.
       </p>
       <p class="muted">
-        Structured assessments. No hand-waving. No participation trophies.
+        Assessment-based. Evidence-driven. No shortcuts.
       </p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>No emojis. No slang. No guesswork.</p>
+    <p>No hype. No guesswork. No excuses.</p>
     <p>© Deathforged Academy</p>
   </footer>
 
 </body>
-</html> 
+</html>
