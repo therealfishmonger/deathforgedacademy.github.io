@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deathforged Academy</title>
-  <meta name="description" content="Authority-driven Death Knight mastery for Blood, Frost, and Unholy. Structured training and professional log reviews." />
+  <meta name="description" content="Structured Death Knight mastery. Professional log reviews for Blood, Frost, and Unholy." />
 
   <style>
     :root {
@@ -17,9 +17,7 @@
       --glow: rgba(139, 0, 0, 0.35);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -29,22 +27,10 @@
       line-height: 1.65;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    h1, h2, h3 { letter-spacing: 0.06em; }
 
-    a {
-      color: var(--fg);
-      text-decoration: none;
-    }
+    a { color: var(--fg); text-decoration: none; }
 
-    h1, h2, h3 {
-      letter-spacing: 0.06em;
-      font-weight: 600;
-    }
-
-    /* NAV */
     nav {
       border-bottom: 1px solid var(--line);
       background: rgba(11,11,11,0.9);
@@ -69,9 +55,7 @@
       letter-spacing: 0.1em;
     }
 
-    .nav-brand img {
-      height: 28px;
-    }
+    .nav-brand img { height: 28px; }
 
     .nav-links a {
       margin-left: 28px;
@@ -79,11 +63,8 @@
       color: var(--muted);
     }
 
-    .nav-links a:hover {
-      color: var(--fg);
-    }
+    .nav-links a:hover { color: var(--fg); }
 
-    /* SECTIONS */
     section {
       border-top: 1px solid var(--line);
       padding: 96px 24px;
@@ -94,29 +75,18 @@
       margin: 0 auto;
     }
 
-    .center {
-      text-align: center;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
+    .center { text-align: center; }
+    .muted { color: var(--muted); }
 
     .hero {
       padding: 140px 24px;
-      background:
-        radial-gradient(circle at center, var(--glow), transparent 60%);
+      background: radial-gradient(circle at center, var(--glow), transparent 60%);
     }
 
     .hero-logo {
       max-width: 120px;
       margin: 0 auto 32px;
       filter: drop-shadow(0 0 18px var(--glow));
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 24px;
     }
 
     .cta {
@@ -127,6 +97,8 @@
       box-shadow: 0 0 24px var(--glow);
       font-weight: 600;
       letter-spacing: 0.08em;
+      border: none;
+      cursor: pointer;
     }
 
     .grid {
@@ -136,9 +108,7 @@
     }
 
     @media (min-width: 768px) {
-      .grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      .grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     .card {
@@ -146,6 +116,33 @@
       border: 1px solid var(--line);
       padding: 32px;
     }
+
+    /* FORM */
+    form {
+      margin-top: 64px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 24px;
+      background: #0E0E0E;
+      border: 1px solid var(--line);
+      color: var(--fg);
+      font-family: inherit;
+    }
+
+    textarea { min-height: 120px; }
 
     footer {
       border-top: 1px solid var(--line);
@@ -159,130 +156,111 @@
 
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="nav-inner">
-      <div class="nav-brand">
-        <!-- Replace src with your actual logo file when ready -->
-        <img src="logo.png" alt="Deathforged Academy Logo" />
-        DEATHFORGED ACADEMY
-      </div>
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#classes">Classes</a>
-        <a href="#logs">Log Reviews</a>
-        <a href="#certification">Certification</a>
-      </div>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <img src="logo.png" alt="Deathforged Academy Logo" />
+      DEATHFORGED ACADEMY
     </div>
-  </nav>
-
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="container center">
-      <img class="hero-logo" src="logo.png" alt="Deathforged Academy" />
-      <h1>TRAIN WITH DISCIPLINE.<br>PERFORM WITH CONSISTENCY.</h1>
-      <p class="muted">
-        Deathforged Academy exists for one reason:  
-        to turn Death Knight players into repeatable, reliable performers in Mythic+ and Raiding.
-      </p>
-      <a class="cta" href="#logs">REQUEST A LOG REVIEW</a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#classes">Classes</a>
+      <a href="#logs">Log Reviews</a>
+      <a href="#certification">Certification</a>
     </div>
-  </section>
+  </div>
+</nav>
 
-  <!-- CLASSES -->
-  <section id="classes">
-    <div class="container">
-      <h2 class="center">DEATH KNIGHT MASTER CLASSES</h2>
+<section id="home" class="hero">
+  <div class="container center">
+    <img class="hero-logo" src="logo.png" alt="Deathforged Academy" />
+    <h1>STRUCTURED TRAINING.<br>MEASURABLE RESULTS.</h1>
+    <p class="muted">
+      Built for Death Knights who are done guessing and ready to perform consistently.
+    </p>
+    <a class="cta" href="#logs">VIEW LOG REVIEWS</a>
+  </div>
+</section>
 
-      <div class="grid">
-        <div class="card">
-          <h3>BLOOD</h3>
-          <p class="muted">
-            Tank mastery focused on pull planning, cooldown layering,
-            and survivability control under pressure.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>FROST</h3>
-          <p class="muted">
-            Burst damage execution refined through resource discipline,
-            cooldown alignment, and encounter timing.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>UNHOLY</h3>
-          <p class="muted">
-            Sustained damage mastery driven by setup discipline,
-            disease uptime, and pet management.
-          </p>
-        </div>
-      </div>
+<section id="classes">
+  <div class="container">
+    <h2 class="center">MASTER CLASSES</h2>
+    <div class="grid">
+      <div class="card"><h3>BLOOD</h3><p class="muted">Survivability, pull planning, and cooldown discipline.</p></div>
+      <div class="card"><h3>FROST</h3><p class="muted">Burst alignment, resource control, execution windows.</p></div>
+      <div class="card"><h3>UNHOLY</h3><p class="muted">Sustained damage, setup discipline, pet management.</p></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- LOG REVIEWS -->
-  <section id="logs">
-    <div class="container">
-      <h2 class="center">PROFESSIONAL LOG REVIEWS</h2>
+<section id="logs">
+  <div class="container">
+    <h2 class="center">LOG REVIEW SERVICES</h2>
 
-      <p class="center muted">
-        Warcraft Logs do not lie. Most players simply don’t know how to read them correctly.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>DIAGNOSTIC REVIEW</h3>
-          <p class="muted">
-            A focused analysis identifying the primary execution failures
-            limiting your performance.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>FULL PERFORMANCE REVIEW</h3>
-          <p class="muted">
-            A complete breakdown of cooldown usage, damage windows,
-            rotational discipline, and decision-making.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>COACHING REVIEW</h3>
-          <p class="muted">
-            A guided walkthrough of your logs, recorded or live,
-            explaining not just what went wrong — but why.
-          </p>
-        </div>
+    <div class="grid">
+      <div class="card">
+        <h3>DIAGNOSTIC REVIEW</h3>
+        <p class="muted">Primary execution failures identified.</p>
+        <p><strong>$30</strong></p>
       </div>
 
-      <div class="center">
-        <a class="cta" href="mailto:deathforgedacademy@gmail.com">
-          REQUEST A REVIEW
-        </a>
+      <div class="card">
+        <h3>FULL PERFORMANCE REVIEW</h3>
+        <p class="muted">Complete breakdown with written corrections.</p>
+        <p><strong>$75</strong></p>
+      </div>
+
+      <div class="card">
+        <h3>COACHING REVIEW</h3>
+        <p class="muted">Recorded or live walkthrough with explanations.</p>
+        <p><strong>$120</strong></p>
       </div>
     </div>
-  </section>
 
-  <!-- CERTIFICATION -->
-  <section id="certification">
-    <div class="container center">
-      <h2>CERTIFICATION TRACKS</h2>
-      <p class="muted">
-        Formal recognition for Death Knight mastery.
-      </p>
-      <p class="muted">
-        Assessment-based. Evidence-driven. No shortcuts.
-      </p>
-    </div>
-  </section>
+    <!-- INTAKE FORM -->
+    <form action="https://formspree.io/f/mjggbajb" method="POST">
+      <label>Character Name</label>
+      <input name="character" required />
 
-  <!-- FOOTER -->
-  <footer>
-    <p>No hype. No guesswork. No excuses.</p>
-    <p>© Deathforged Academy</p>
-  </footer>
+      <label>Realm</label>
+      <input name="realm" required />
+
+      <label>Specialization</label>
+      <select name="spec">
+        <option>Blood</option>
+        <option>Frost</option>
+        <option>Unholy</option>
+      </select>
+
+      <label>Warcraft Logs Link</label>
+      <input name="logs" required />
+
+      <label>Service Requested</label>
+      <select name="service">
+        <option>Diagnostic Review</option>
+        <option>Full Performance Review</option>
+        <option>Coaching Review</option>
+      </select>
+
+      <label>Additional Context</label>
+      <textarea name="notes"></textarea>
+
+      <button class="cta" type="submit">SUBMIT REQUEST</button>
+    </form>
+  </div>
+</section>
+
+<section id="certification">
+  <div class="container center">
+    <h2>CERTIFICATION TRACKS</h2>
+    <p class="muted">Assessment-based mastery recognition.</p>
+  </div>
+</section>
+
+<footer>
+  <p>No hype. No guesswork. No excuses.</p>
+  <p>© Deathforged Academy</p>
+</footer>
 
 </body>
 </html>
