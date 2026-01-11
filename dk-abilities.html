@@ -3,207 +3,229 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Death Knight Ability Reference – Deathforged Academy</title>
-
-<!-- WOWHEAD TOOLTIP SCRIPT -->
-<script>
-  var whTooltips = { colorLinks: true, iconizeLinks: true };
-</script>
-<script src="https://wow.zamimg.com/js/tooltips.js"></script>
+<title>Death Knight Ability Reference</title>
 
 <style>
-/* ===== GLOBAL ===== */
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Inter, sans-serif;
-  background: #0b0b0b;
-  color: #f5f5f5;
-}
-a { color: inherit; text-decoration: none; }
+/* INCLUDE SAME HEADER CSS FROM INDEX */
 
-/* ===== HEADER (IDENTICAL ACROSS SITE) ===== */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(0,0,0,0.9);
-  border-bottom: 1px solid #1a1a1a;
-}
-.nav-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 14px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.brand {
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-.main-nav {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-}
-.main-nav a,
-.dropdown-label {
-  font-size: 14px;
-  cursor: pointer;
-}
-
-/* DROPDOWN FIXED */
-.dropdown {
-  position: relative;
-}
-.dropdown::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: -20px;
-  right: -20px;
-  height: 20px;
-}
-.dropdown-menu {
-  position: absolute;
-  top: calc(100% + 12px);
-  left: 0;
-  min-width: 180px;
-  background: rgba(0,0,0,0.95);
-  border: 1px solid #1a1a1a;
-  display: none;
-}
-.dropdown-menu a {
-  display: block;
-  padding: 10px 20px;
-}
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
-  display: block;
-}
-
-/* ===== PAGE CONTENT ===== */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 100px 20px 80px; /* HEADER OFFSET FIX */
-}
-
-h1 {
-  margin-bottom: 40px;
-}
-
-.section {
-  margin-bottom: 60px;
-}
-
-.section h2 {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #1a1a1a;
-  padding-bottom: 6px;
-}
-
-/* SPEC COLORS */
-.blood h2 { color: #b00000; }
-.frost h2 { color: #4da6ff; }
-.unholy h2 { color: #4caf50; }
-
-/* ABILITY GRID */
 .ability-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;
 }
-
 .ability {
-  background: linear-gradient(180deg, #111, #0b0b0b);
-  border: 1px solid #1a1a1a;
-  padding: 12px 14px;
-  font-size: 14px;
+  padding:14px;
+  border:1px solid #222;
+  display:flex;
+  align-items:center;
+  gap:14px;
 }
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 60px 20px;
-  border-top: 1px solid #1a1a1a;
-  color: #999;
+.ability img {
+  width:36px;
+  height:36px;
 }
+.section { margin:40px 0; }
+.blood { color:#c00000; }
+.frost { color:#4aa3ff; }
+.unholy { color:#5bd65b; }
 </style>
 </head>
 
 <body>
+<!-- IDENTICAL HEADER -->
 
-<header class="site-header">
-  <div class="nav-inner">
-    <div class="brand">DEATHFORGED ACADEMY</div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="log-reviews.html">Log Reviews</a>
-      <div class="dropdown">
-        <span class="dropdown-label">Talent Calculator</span>
-        <div class="dropdown-menu">
-          <a href="blood-dk-talents.html">Blood</a>
-          <a href="frost-dk-talents.html">Frost</a>
-          <a href="unholy-dk-talents.html">Unholy</a>
-        </div>
-      </div>
-      <a href="dk-abilities.html">Ability Reference</a>
-      <a href="faq.html">FAQ</a>
-      <a href="certification.html">Certification</a>
-    </nav>
-  </div>
-</header>
+<main>
+<h1>Death Knight Ability Reference</h1>
 
-<div class="container">
-  <h1>Death Knight Ability Reference</h1>
-
-  <!-- CORE -->
-  <div class="section">
-    <h2>Core Abilities</h2>
-    <div class="ability-grid">
-      <div class="ability"><a href="https://www.wowhead.com/spell=49998">Death Strike</a></div>
-      <div class="ability"><a href="https://www.wowhead.com/spell=48707">Anti-Magic Shell</a></div>
-      <div class="ability"><a href="https://www.wowhead.com/spell=49576">Death Grip</a></div>
-      <div class="ability"><a href="https://www.wowhead.com/spell=47528">Mind Freeze</a></div>
-      <div class="ability"><a href="https://www.wowhead.com/spell=48792">Icebound Fortitude</a></div>
-    </div>
-  </div>
-
-  <!-- BLOOD -->
-  <div class="section blood">
-    <h2>Blood</h2>
-    <div class="ability-grid">
-      <div class="ability"><a href="https://www.wowhead.com/spell=49028">Dancing Rune Weapon</a></div>
-      <div class="ability"><a href="https://www.wowhead.com/spell=55233">Vampiric Blood</a></div>
-      <div class="ability"><a href="https://www.wowhead.com/spell=50842">Blood Boil</a></div>
-    </div>
-  </div>
-
-  <!-- FROST -->
-  <div class="section frost">
-    <h2>Frost</h2>
-    <div class="ability-grid">
-      <div class="ability"><a href="https://www.wowhead.com/spell=152279">Breath of Sindragosa</a></div>
-      <div class="ability"><a href="https://www.wowhead.com/spell=51271">Pillar of Frost</a></div>
-      <div class="ability"><a href="https://www.wowhead.com/spell=49020">Obliterate</a></div>
-    </div>
-  </div>
-
-  <!-- UNHOLY -->
-  <div class="section unholy">
-    <h2>Unholy</h2>
-    <div class="ability-grid">
-      <div class="ability"><a href="https://www.wowhead.com/spell=63560">Dark Transformation</a></div>
-      <div class="ability"><a href="https://www.wowhead.com/spell=42650">Army of the Dead</a></div>
-      <div class="ability"><a href="https://www.wowhead.com/spell=55090">Scourge Strike</a></div>
-    </div>
-  </div>
+<div class="section">
+<h2>Core Abilities</h2>
+<div class="ability-grid">
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_deathstrike.jpg">Death Strike</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_antimagicshell.jpg">Anti-Magic Shell</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_strangulate.jpg">Death Grip</div>
+</div>
 </div>
 
-<footer>
-  Mastery Is Proven.
-</footer>
+<div class="section blood">
+<h2>Blood</h2>
+<div class="ability-grid">
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_sword_07.jpg">Dancing Rune Weapon</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_lifedrain.jpg">Vampiric Blood</div>
+</div>
+</div>
 
+<div class="section frost">
+<h2>Frost</h2>
+<div class="ability-grid">
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_breathofsindragosa.jpg">Breath of Sindragosa</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_pillaroffrost.jpg">Pillar of Frost</div>
+</div>
+</div>
+
+<div class="section unholy">
+<h2>Unholy</h2>
+<div class="ability-grid">
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholyfrenzy.jpg">Dark Transformation</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_armyofthedead.jpg">Army of the Dead</div>
+</div>
+</div>
+
+</main>
+
+<footer>Mastery Is Proven.</footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Death Knight Ability Reference</title>
+
+<style>
+/* INCLUDE SAME HEADER CSS FROM INDEX */
+
+.ability-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;
+}
+.ability {
+  padding:14px;
+  border:1px solid #222;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.ability img {
+  width:36px;
+  height:36px;
+}
+.section { margin:40px 0; }
+.blood { color:#c00000; }
+.frost { color:#4aa3ff; }
+.unholy { color:#5bd65b; }
+</style>
+</head>
+
+<body>
+<!-- IDENTICAL HEADER -->
+
+<main>
+<h1>Death Knight Ability Reference</h1>
+
+<div class="section">
+<h2>Core Abilities</h2>
+<div class="ability-grid">
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_deathstrike.jpg">Death Strike</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_antimagicshell.jpg">Anti-Magic Shell</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_strangulate.jpg">Death Grip</div>
+</div>
+</div>
+
+<div class="section blood">
+<h2>Blood</h2>
+<div class="ability-grid">
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_sword_07.jpg">Dancing Rune Weapon</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_lifedrain.jpg">Vampiric Blood</div>
+</div>
+</div>
+
+<div class="section frost">
+<h2>Frost</h2>
+<div class="ability-grid">
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_breathofsindragosa.jpg">Breath of Sindragosa</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_pillaroffrost.jpg">Pillar of Frost</div>
+</div>
+</div>
+
+<div class="section unholy">
+<h2>Unholy</h2>
+<div class="ability-grid">
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholyfrenzy.jpg">Dark Transformation</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_armyofthedead.jpg">Army of the Dead</div>
+</div>
+</div>
+
+</main>
+
+<footer>Mastery Is Proven.</footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Death Knight Ability Reference</title>
+
+<style>
+/* INCLUDE SAME HEADER CSS FROM INDEX */
+
+.ability-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:16px;
+}
+.ability {
+  padding:14px;
+  border:1px solid #222;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.ability img {
+  width:36px;
+  height:36px;
+}
+.section { margin:40px 0; }
+.blood { color:#c00000; }
+.frost { color:#4aa3ff; }
+.unholy { color:#5bd65b; }
+</style>
+</head>
+
+<body>
+<!-- IDENTICAL HEADER -->
+
+<main>
+<h1>Death Knight Ability Reference</h1>
+
+<div class="section">
+<h2>Core Abilities</h2>
+<div class="ability-grid">
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_deathstrike.jpg">Death Strike</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_antimagicshell.jpg">Anti-Magic Shell</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_strangulate.jpg">Death Grip</div>
+</div>
+</div>
+
+<div class="section blood">
+<h2>Blood</h2>
+<div class="ability-grid">
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/inv_sword_07.jpg">Dancing Rune Weapon</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_lifedrain.jpg">Vampiric Blood</div>
+</div>
+</div>
+
+<div class="section frost">
+<h2>Frost</h2>
+<div class="ability-grid">
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_breathofsindragosa.jpg">Breath of Sindragosa</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_pillaroffrost.jpg">Pillar of Frost</div>
+</div>
+</div>
+
+<div class="section unholy">
+<h2>Unholy</h2>
+<div class="ability-grid">
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_shadow_unholyfrenzy.jpg">Dark Transformation</div>
+<div class="ability"><img src="https://wow.zamimg.com/images/wow/icons/large/spell_deathknight_armyofthedead.jpg">Army of the Dead</div>
+</div>
+</div>
+
+</main>
+
+<footer>Mastery Is Proven.</footer>
 </body>
 </html>
