@@ -3,125 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQ – Deathforged Academy</title>
+<title>FAQ | Deathforged Academy</title>
 
 <style>
-/* ===== GLOBAL ===== */
+:root {
+  --bg:#0b0b0b;
+  --fg:#ffffff;
+  --muted:#b5b5b5;
+  --accent:#8b0000;
+}
+
+* { box-sizing: border-box; }
+
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Inter, sans-serif;
-  background: #0b0b0b;
-  color: #f5f5f5;
-}
-a { color: inherit; text-decoration: none; }
-
-/* ===== HEADER ===== */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(0,0,0,0.9);
-  border-bottom: 1px solid #1a1a1a;
-}
-.nav-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 14px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.brand {
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-.main-nav {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-}
-.main-nav a,
-.dropdown-label {
-  font-size: 14px;
-  cursor: pointer;
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
 }
 
-/* ===== DROPDOWN ===== */
+/* ===== IDENTICAL HEADER ===== */
+header {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid #222;
+}
+.nav {
+  max-width:1200px;
+  margin:auto;
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo {
+  font-weight:600;
+  letter-spacing:1px;
+}
+.nav a {
+  color:#fff;
+  text-decoration:none;
+  margin-left:22px;
+  font-size:14px;
+}
 .dropdown {
-  position: relative;
-}
-.dropdown::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: -20px;
-  right: -20px;
-  height: 20px;
+  position:relative;
+  display:inline-block;
 }
 .dropdown-menu {
-  position: absolute;
-  top: calc(100% + 12px);
-  left: 0;
-  min-width: 180px;
-  background: rgba(0,0,0,0.95);
-  border: 1px solid #1a1a1a;
-  display: none;
+  position:absolute;
+  top:32px;
+  left:0;
+  background:#111;
+  border:1px solid #222;
+  min-width:180px;
+  display:none;
 }
 .dropdown-menu a {
-  display: block;
-  padding: 10px 20px;
+  display:block;
+  padding:10px 14px;
 }
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
-  display: block;
+.dropdown.open .dropdown-menu { display:block; }
+
+/* Offset so header does not overlap content */
+main { padding-top:90px; }
+
+/* ===== FAQ CONTENT (UNCHANGED STYLE) ===== */
+main {
+  max-width:900px;
+  margin:auto;
+  padding:60px 24px;
 }
 
-/* ===== CONTENT ===== */
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 80px 20px;
-}
 h1 {
-  margin-bottom: 40px;
-}
-.faq-item {
-  margin-bottom: 32px;
-}
-.faq-item strong {
-  display: block;
-  margin-bottom: 6px;
-}
-.faq-item p {
-  color: #b5b5b5;
+  margin-bottom:10px;
 }
 
-/* ===== FOOTER ===== */
+.faq-intro {
+  color:var(--muted);
+  margin-bottom:40px;
+}
+
+.faq-item {
+  border-top:1px solid #222;
+  padding:26px 0;
+}
+
+.faq-item h3 {
+  margin-bottom:8px;
+  font-size:18px;
+}
+
+.faq-item p {
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* Footer */
 footer {
-  text-align: center;
-  padding: 60px 20px;
-  border-top: 1px solid #1a1a1a;
-  color: #999;
+  border-top:1px solid #222;
+  padding:20px;
+  text-align:center;
+  color:#777;
+  font-size:12px;
 }
 </style>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="nav-inner">
-    <div class="brand">DEATHFORGED ACADEMY</div>
-    <nav class="main-nav">
+<header>
+  <div class="nav">
+    <div class="logo">DEATHFORGED ACADEMY</div>
+    <nav>
       <a href="index.html">Home</a>
       <a href="log-reviews.html">Log Reviews</a>
-      <div class="dropdown">
-        <span class="dropdown-label">Talent Calculator</span>
+
+      <div class="dropdown" id="talentDropdown">
+        <a href="#">Talent Calculator ▾</a>
         <div class="dropdown-menu">
           <a href="blood-dk-talents.html">Blood</a>
           <a href="frost-dk-talents.html">Frost</a>
           <a href="unholy-dk-talents.html">Unholy</a>
         </div>
       </div>
+
       <a href="dk-abilities.html">Ability Reference</a>
       <a href="faq.html">FAQ</a>
       <a href="certification.html">Certification</a>
@@ -129,38 +138,58 @@ footer {
   </div>
 </header>
 
-<div class="container">
-  <h1>Frequently Asked Questions</h1>
+<main>
+  <h1>Client FAQ</h1>
+  <p class="faq-intro">
+    Read this before requesting services. It answers the most common questions and sets expectations clearly.
+  </p>
 
   <div class="faq-item">
-    <strong>What classes do you cover?</strong>
-    <p>Death Knights only. Blood, Frost, and Unholy are treated as distinct disciplines.</p>
+    <h3>What services do you offer?</h3>
+    <p>
+      Deathforged Academy provides Diagnostic Log Reviews, Full Performance Reviews,
+      and Coaching Reviews for Death Knight specializations.
+    </p>
   </div>
 
   <div class="faq-item">
-    <strong>Do you provide “best build” templates?</strong>
-    <p>No. Builds are context-dependent. Execution quality matters more than static presets.</p>
+    <h3>Do you review logs in public Discord channels?</h3>
+    <p>
+      No. Public channels are for discussion only. All analysis and performance breakdowns
+      are delivered privately to active clients.
+    </p>
   </div>
 
   <div class="faq-item">
-    <strong>Are log reviews automated?</strong>
-    <p>No. Every review is performed manually, with written or recorded feedback.</p>
+    <h3>What do I need to submit for a log review?</h3>
+    <p>
+      Character name and realm, specialization, Warcraft Logs link,
+      specific encounters or runs, and your primary performance goal.
+    </p>
   </div>
 
   <div class="faq-item">
-    <strong>Do I need to join Discord?</strong>
-    <p>Discord is optional for public access. Private feedback and follow-up discussions occur there.</p>
+    <h3>How long does a review take?</h3>
+    <p>
+      Diagnostic reviews typically take 48–72 hours. Full reviews may take 5–7 days,
+      depending on scope.
+    </p>
   </div>
+</main>
 
-  <div class="faq-item">
-    <strong>Is certification guaranteed?</strong>
-    <p>No. Certification is assessment-based and must be earned through demonstrated mastery.</p>
-  </div>
-</div>
+<footer>Mastery Is Proven.</footer>
 
-<footer>
-  Mastery Is Proven.
-</footer>
+<script>
+const dropdown = document.getElementById('talentDropdown');
+dropdown.addEventListener('mouseenter',()=>dropdown.classList.add('open'));
+dropdown.addEventListener('mouseleave',()=>dropdown.classList.remove('open'));
+dropdown.querySelector('a').addEventListener('click',e=>{
+  if(window.innerWidth < 800){
+    e.preventDefault();
+    dropdown.classList.toggle('open');
+  }
+});
+</script>
 
 </body>
 </html>
