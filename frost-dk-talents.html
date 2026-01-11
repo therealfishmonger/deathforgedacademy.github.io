@@ -1,107 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frost Death Knight Talents | Deathforged Academy</title>
-  <meta name="description" content="Frost Death Knight talent philosophy and recommended builds with Wowhead links and in-game import strings." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frost DK Talents | Deathforged Academy</title>
 
-  <style>
-    body {
-      margin: 0;
-      background: #0B0B0B;
-      color: #FFFFFF;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
-      line-height: 1.65;
-    }
-    a { color: #FFFFFF; text-decoration: none; }
-    h1, h2 { letter-spacing: 0.06em; }
-    section { padding: 96px 24px; border-top: 1px solid #1F1F1F; }
-    .container { max-width: 1000px; margin: 0 auto; }
-    .muted { color: #B5B5B5; }
-    .block {
-      margin-top: 48px;
-      padding: 32px;
-      border: 1px solid #1F1F1F;
-      background: #111111;
-    }
-    .import {
-      margin-top: 24px;
-      padding: 16px;
-      background: #000;
-      font-family: monospace;
-      color: #B5B5B5;
-      overflow-x: auto;
-    }
-    footer {
-      border-top: 1px solid #1F1F1F;
-      padding: 48px 24px;
-      text-align: center;
-      color: #B5B5B5;
-    }
-  </style>
+<style>
+:root {
+  --accent:#6FA8DC;
+  --glow:rgba(111,168,220,0.35);
+}
+body{
+  margin:0;
+  background:radial-gradient(circle at top,var(--glow),#0B0B0B 60%);
+  color:#fff;
+  font-family:system-ui,Segoe UI,Inter,sans-serif;
+}
+a{color:#fff;text-decoration:none}
+nav{border-bottom:1px solid #1F1F1F;background:#0B0B0B}
+.nav-inner{max-width:1200px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between}
+.nav-links a{margin-left:24px;color:#B5B5B5}
+.nav-links a:hover{color:#fff}
+section{padding:96px 24px;border-top:1px solid #1F1F1F}
+.container{max-width:1000px;margin:auto}
+h1,h2{letter-spacing:.06em}
+.muted{color:#B5B5B5}
+.block{
+  margin-top:48px;
+  padding:32px;
+  border:1px solid var(--accent);
+  background:#111;
+  box-shadow:0 0 24px var(--glow);
+}
+.import{background:#000;padding:16px;font-family:monospace;margin-top:16px;color:#B5B5B5}
+footer{text-align:center;padding:48px 24px;border-top:1px solid #1F1F1F;color:#B5B5B5}
+</style>
 </head>
 
 <body>
 
-<section>
-  <div class="container">
-    <h1>FROST DEATH KNIGHT — TALENT PHILOSOPHY</h1>
-    <p class="muted">
-      Frost talent configurations focus on controlled burst execution, resource discipline,
-      and cooldown alignment.
-    </p>
-
-    <h2>BUILD INTENT</h2>
-    <p class="muted">
-      Frost performance is defined by timing. Talents are selected to reinforce consistent
-      burst windows rather than volatile damage spikes.
-    </p>
-
-    <h2>MYTHIC+</h2>
-    <p class="muted">
-      Mythic+ builds emphasize frequent, predictable burst aligned with pull cadence
-      and minimal cooldown drift.
-    </p>
-
-    <h2>RAID</h2>
-    <p class="muted">
-      Raid builds favor strict cooldown planning and rune economy to ensure burst windows
-      are executed cleanly and on schedule.
-    </p>
-
-    <div class="block">
-      <h2>RECOMMENDED TALENT BUILD</h2>
-      <p>
-        <a href="INSERT-PERSISTENT-WOWHEAD-FROST-BUILD-LINK" target="_blank">
-          Open Recommended Build on Wowhead
-        </a>
-      </p>
+<nav>
+  <div class="nav-inner">
+    <strong>DEATHFORGED ACADEMY</strong>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="dk-abilities.html">Ability Reference</a>
+      <a href="blood-dk-talents.html">Blood</a>
+      <a href="unholy-dk-talents.html">Unholy</a>
     </div>
-
-    <div class="block">
-      <h2>EXPLORE ALTERNATIVES</h2>
-      <p>
-        <a href="https://www.wowhead.com/talent-calc/death-knight/frost" target="_blank">
-          Open Blank Frost DK Talent Calculator
-        </a>
-      </p>
-    </div>
-
-    <div class="block">
-      <h2>IN-GAME TALENT IMPORT</h2>
-      <div class="import">
-        INSERT-FROST-DK-IMPORT-STRING-HERE
-      </div>
-    </div>
-
   </div>
+</nav>
+
+<section>
+<div class="container">
+<h1>FROST DEATH KNIGHT — TALENTS</h1>
+<p class="muted">Burst alignment, resource discipline, cooldown timing.</p>
+
+<h2>Build Intent</h2>
+<p class="muted">Frost talents enforce repeatable burst windows instead of volatile damage spikes.</p>
+
+<h2>Mythic+</h2>
+<p class="muted">Optimized for frequent, predictable AoE bursts.</p>
+
+<h2>Raid</h2>
+<p class="muted">Focuses on cooldown alignment and rune economy.</p>
+
+<div class="block">
+<h2>Recommended Build</h2>
+<a href="INSERT-FROST-WOWHEAD-LINK" target="_blank">Open Recommended Build on Wowhead</a>
+</div>
+
+<div class="block">
+<h2>Explore Alternatives</h2>
+<a href="https://www.wowhead.com/talent-calc/death-knight/frost" target="_blank">Open Blank Frost Calculator</a>
+</div>
+
+<div class="block">
+<h2>In-Game Import</h2>
+<div class="import">INSERT-FROST-IMPORT-STRING</div>
+</div>
+
+</div>
 </section>
 
-<footer>
-  <p>Mastery Is Proven.</p>
-  <p>© Deathforged Academy</p>
-</footer>
-
+<footer><p>Mastery Is Proven.</p></footer>
 </body>
 </html>
