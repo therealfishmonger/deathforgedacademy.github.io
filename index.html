@@ -6,104 +6,115 @@
 <title>Deathforged Academy</title>
 
 <style>
-/* ===== GLOBAL ===== */
+:root {
+  --bg:#0b0b0b;
+  --fg:#ffffff;
+  --muted:#b5b5b5;
+  --accent:#8b0000;
+}
+
+* { box-sizing:border-box; }
+
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Inter, sans-serif;
-  background: #0b0b0b;
-  color: #f5f5f5;
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
 }
-a { color: inherit; text-decoration: none; }
 
-/* ===== HEADER ===== */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(0,0,0,0.9);
-  border-bottom: 1px solid #1a1a1a;
+/* HEADER */
+header {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid #222;
 }
-.nav-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 14px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.nav {
+  max-width:1200px;
+  margin:auto;
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
-.brand { font-weight: 700; letter-spacing: 1px; }
-.main-nav {
-  display: flex;
-  gap: 24px;
-  align-items: center;
+.nav a {
+  color:#fff;
+  text-decoration:none;
+  margin-left:22px;
+  font-size:14px;
 }
-.main-nav a,
-.dropdown-label { font-size: 14px; cursor: pointer; }
-
-/* ===== DROPDOWN ===== */
-.dropdown { position: relative; }
-.dropdown::after {
-  content:"";
-  position:absolute;
-  top:100%;
-  left:-20px;
-  right:-20px;
-  height:20px;
+.logo {
+  font-weight:600;
+  letter-spacing:1px;
+}
+.dropdown {
+  position:relative;
+  display:inline-block;
 }
 .dropdown-menu {
   position:absolute;
-  top:calc(100% + 12px);
+  top:32px;
   left:0;
+  background:#111;
+  border:1px solid #222;
   min-width:180px;
-  background:rgba(0,0,0,0.95);
-  border:1px solid #1a1a1a;
   display:none;
 }
 .dropdown-menu a {
   display:block;
-  padding:10px 20px;
+  padding:10px 14px;
 }
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu {
-  display:block;
-}
+.dropdown.open .dropdown-menu { display:block; }
 
-/* ===== HERO ===== */
+/* OFFSET */
+main { padding-top:90px; }
+
+/* HERO */
 .hero {
-  min-height: 85vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
   text-align:center;
+  padding:120px 24px;
 }
-.hero h1 { font-size: 36px; }
-.hero p { color:#b5b5b5; max-width:600px; margin:20px auto 40px; }
-.hero .btn {
-  padding:14px 28px;
-  background:#8b0000;
+.hero h1 {
+  font-size:36px;
+  margin-bottom:12px;
+}
+.hero p {
+  color:var(--muted);
+  max-width:600px;
+  margin:0 auto 30px;
+}
+.cta {
+  background:var(--accent);
+  padding:14px 26px;
+  color:#fff;
+  border:none;
+  text-decoration:none;
   font-weight:600;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
+  border-top:1px solid #222;
+  padding:20px;
   text-align:center;
-  padding:60px 20px;
-  border-top:1px solid #1a1a1a;
-  color:#999;
+  color:#777;
+  font-size:12px;
 }
 </style>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="nav-inner">
-    <div class="brand">DEATHFORGED ACADEMY</div>
-    <nav class="main-nav">
+<header>
+  <div class="nav">
+    <div class="logo">DEATHFORGED ACADEMY</div>
+    <nav>
       <a href="index.html">Home</a>
       <a href="log-reviews.html">Log Reviews</a>
-      <div class="dropdown">
-        <span class="dropdown-label">Talent Calculator</span>
+      <div class="dropdown" id="talentDropdown">
+        <a href="#">Talent Calculator ▾</a>
         <div class="dropdown-menu">
           <a href="blood-dk-talents.html">Blood</a>
           <a href="frost-dk-talents.html">Frost</a>
@@ -112,18 +123,29 @@ footer {
       </div>
       <a href="dk-abilities.html">Ability Reference</a>
       <a href="faq.html">FAQ</a>
+      <a href="certification.html">Certification</a>
     </nav>
   </div>
 </header>
 
+<main>
 <section class="hero">
-  <div>
-    <h1>TRAIN WITH DISCIPLINE.<br>PERFORM WITH CONSISTENCY.</h1>
-    <p>Execution-first Death Knight training. No guesswork. No hype.</p>
-    <a class="btn" href="log-reviews.html">REQUEST A LOG REVIEW</a>
-  </div>
+  <h1>Train With Discipline.<br>Perform With Consistency.</h1>
+  <p>Deathforged Academy removes guesswork and enforces repeatable execution for Death Knight players.</p>
+  <a class="cta" href="log-reviews.html">Request a Log Review</a>
 </section>
+</main>
 
 <footer>Mastery Is Proven.</footer>
+
+<script>
+const dropdown = document.getElementById('talentDropdown');
+dropdown.addEventListener('mouseenter',()=>dropdown.classList.add('open'));
+dropdown.addEventListener('mouseleave',()=>dropdown.classList.remove('open'));
+dropdown.querySelector('a').addEventListener('click',e=>{
+  if(window.innerWidth<800){ e.preventDefault(); dropdown.classList.toggle('open'); }
+});
+</script>
+
 </body>
 </html>
