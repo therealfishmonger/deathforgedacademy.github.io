@@ -3,66 +3,207 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Death Knight Abilities</title>
+<title>Death Knight Ability Reference – Deathforged Academy</title>
+
+<!-- WOWHEAD TOOLTIP SCRIPT -->
+<script>
+  var whTooltips = { colorLinks: true, iconizeLinks: true };
+</script>
+<script src="https://wow.zamimg.com/js/tooltips.js"></script>
+
 <style>
-body { margin:0; font-family:system-ui; background:#0b0b0b; color:#f5f5f5; }
-.container { max-width:1100px; margin:auto; padding:80px 20px; }
-.section { margin-top:60px; }
-.section h2 { border-bottom:1px solid #1a1a1a; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; }
-.card { border:1px solid #1a1a1a; padding:16px; background:#111; }
-.blood h2{color:#b00000;}
-.frost h2{color:#5faaff;}
-.unholy h2{color:#4caf50;}
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Inter, sans-serif;
+  background: #0b0b0b;
+  color: #f5f5f5;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ===== HEADER (IDENTICAL ACROSS SITE) ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.9);
+  border-bottom: 1px solid #1a1a1a;
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.main-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.main-nav a,
+.dropdown-label {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* DROPDOWN FIXED */
+.dropdown {
+  position: relative;
+}
+.dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  right: -20px;
+  height: 20px;
+}
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  min-width: 180px;
+  background: rgba(0,0,0,0.95);
+  border: 1px solid #1a1a1a;
+  display: none;
+}
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+}
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+/* ===== PAGE CONTENT ===== */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 20px 80px; /* HEADER OFFSET FIX */
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 6px;
+}
+
+/* SPEC COLORS */
+.blood h2 { color: #b00000; }
+.frost h2 { color: #4da6ff; }
+.unholy h2 { color: #4caf50; }
+
+/* ABILITY GRID */
+.ability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.ability {
+  background: linear-gradient(180deg, #111, #0b0b0b);
+  border: 1px solid #1a1a1a;
+  padding: 12px 14px;
+  font-size: 14px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 60px 20px;
+  border-top: 1px solid #1a1a1a;
+  color: #999;
+}
 </style>
 </head>
 
 <body>
-<header class="site-header">…(IDENTICAL HEADER)…</header>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <div class="brand">DEATHFORGED ACADEMY</div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="log-reviews.html">Log Reviews</a>
+      <div class="dropdown">
+        <span class="dropdown-label">Talent Calculator</span>
+        <div class="dropdown-menu">
+          <a href="blood-dk-talents.html">Blood</a>
+          <a href="frost-dk-talents.html">Frost</a>
+          <a href="unholy-dk-talents.html">Unholy</a>
+        </div>
+      </div>
+      <a href="dk-abilities.html">Ability Reference</a>
+      <a href="faq.html">FAQ</a>
+      <a href="certification.html">Certification</a>
+    </nav>
+  </div>
+</header>
 
 <div class="container">
-<h1>Death Knight Ability Reference</h1>
+  <h1>Death Knight Ability Reference</h1>
 
-<div class="section">
-<h2>Core Abilities</h2>
-<div class="grid">
-<div class="card">Death Strike</div>
-<div class="card">Anti-Magic Shell</div>
-<div class="card">Death Grip</div>
-<div class="card">Mind Freeze</div>
-<div class="card">Icebound Fortitude</div>
-</div>
+  <!-- CORE -->
+  <div class="section">
+    <h2>Core Abilities</h2>
+    <div class="ability-grid">
+      <div class="ability"><a href="https://www.wowhead.com/spell=49998">Death Strike</a></div>
+      <div class="ability"><a href="https://www.wowhead.com/spell=48707">Anti-Magic Shell</a></div>
+      <div class="ability"><a href="https://www.wowhead.com/spell=49576">Death Grip</a></div>
+      <div class="ability"><a href="https://www.wowhead.com/spell=47528">Mind Freeze</a></div>
+      <div class="ability"><a href="https://www.wowhead.com/spell=48792">Icebound Fortitude</a></div>
+    </div>
+  </div>
+
+  <!-- BLOOD -->
+  <div class="section blood">
+    <h2>Blood</h2>
+    <div class="ability-grid">
+      <div class="ability"><a href="https://www.wowhead.com/spell=49028">Dancing Rune Weapon</a></div>
+      <div class="ability"><a href="https://www.wowhead.com/spell=55233">Vampiric Blood</a></div>
+      <div class="ability"><a href="https://www.wowhead.com/spell=50842">Blood Boil</a></div>
+    </div>
+  </div>
+
+  <!-- FROST -->
+  <div class="section frost">
+    <h2>Frost</h2>
+    <div class="ability-grid">
+      <div class="ability"><a href="https://www.wowhead.com/spell=152279">Breath of Sindragosa</a></div>
+      <div class="ability"><a href="https://www.wowhead.com/spell=51271">Pillar of Frost</a></div>
+      <div class="ability"><a href="https://www.wowhead.com/spell=49020">Obliterate</a></div>
+    </div>
+  </div>
+
+  <!-- UNHOLY -->
+  <div class="section unholy">
+    <h2>Unholy</h2>
+    <div class="ability-grid">
+      <div class="ability"><a href="https://www.wowhead.com/spell=63560">Dark Transformation</a></div>
+      <div class="ability"><a href="https://www.wowhead.com/spell=42650">Army of the Dead</a></div>
+      <div class="ability"><a href="https://www.wowhead.com/spell=55090">Scourge Strike</a></div>
+    </div>
+  </div>
 </div>
 
-<div class="section blood">
-<h2>Blood</h2>
-<div class="grid">
-<div class="card">Dancing Rune Weapon</div>
-<div class="card">Vampiric Blood</div>
-<div class="card">Blood Boil</div>
-</div>
-</div>
+<footer>
+  Mastery Is Proven.
+</footer>
 
-<div class="section frost">
-<h2>Frost</h2>
-<div class="grid">
-<div class="card">Breath of Sindragosa</div>
-<div class="card">Pillar of Frost</div>
-<div class="card">Obliterate</div>
-</div>
-</div>
-
-<div class="section unholy">
-<h2>Unholy</h2>
-<div class="grid">
-<div class="card">Dark Transformation</div>
-<div class="card">Army of the Dead</div>
-<div class="card">Scourge Strike</div>
-</div>
-</div>
-
-</div>
-
-<footer>Mastery Is Proven.</footer>
 </body>
 </html>
