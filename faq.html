@@ -1,252 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Client FAQ | Deathforged Academy</title>
-  <meta name="description" content="Frequently asked questions about log reviews, coaching, and certification at Deathforged Academy." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ – Deathforged Academy</title>
 
-  <style>
-    :root {
-      --bg: #0B0B0B;
-      --bg-soft: #111111;
-      --fg: #FFFFFF;
-      --muted: #B5B5B5;
-      --line: #1F1F1F;
-      --accent: #8B0000;
-    }
+<style>
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Inter, sans-serif;
+  background: #0b0b0b;
+  color: #f5f5f5;
+}
+a { color: inherit; text-decoration: none; }
 
-    * { box-sizing: border-box; }
-/* === TEXTURE SYSTEM === */
-
-/* Global ash grain */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("texture-ash.png");
-  background-repeat: repeat;
-  opacity: 0.06;              /* subtle, premium */
-  pointer-events: none;
-  z-index: 0;
+/* ===== HEADER ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.9);
+  border-bottom: 1px solid #1a1a1a;
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.main-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.main-nav a,
+.dropdown-label {
+  font-size: 14px;
+  cursor: pointer;
 }
 
-/* Keep content above textures */
-body > * {
+/* ===== DROPDOWN ===== */
+.dropdown {
   position: relative;
-  z-index: 1;
 }
-
-/* Rune impressions — opt-in via .rune-layer */
-.rune-layer::before {
+.dropdown::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background-image: url("texture-runes.png");
-  background-repeat: repeat;
-  opacity: 0.05;              /* extremely restrained */
-  pointer-events: none;
-  z-index: 0;
+  top: 100%;
+  left: -20px;
+  right: -20px;
+  height: 20px;
+}
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  min-width: 180px;
+  background: rgba(0,0,0,0.95);
+  border: 1px solid #1a1a1a;
+  display: none;
+}
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+}
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
 }
 
-/* Ensure section content sits above rune layer */
-.rune-layer > * {
-  position: relative;
-  z-index: 1;
+/* ===== CONTENT ===== */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 20px;
+}
+h1 {
+  margin-bottom: 40px;
+}
+.faq-item {
+  margin-bottom: 32px;
+}
+.faq-item strong {
+  display: block;
+  margin-bottom: 6px;
+}
+.faq-item p {
+  color: #b5b5b5;
 }
 
-    body {
-      margin: 0;
-      background: radial-gradient(circle at top, #141414, var(--bg));
-      color: var(--fg);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
-      line-height: 1.7;
-    }
-
-    nav {
-      border-bottom: 1px solid var(--line);
-      background: rgba(11,11,11,0.9);
-      backdrop-filter: blur(6px);
-    }
-
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 14px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-    }
-
-    .nav-brand img { height: 28px; }
-
-    .nav-links a {
-      margin-left: 28px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-decoration: none;
-    }
-
-    .nav-links a:hover { color: var(--fg); }
-
-    section {
-      border-top: 1px solid var(--line);
-      padding: 96px 24px;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    h1, h2 {
-      letter-spacing: 0.06em;
-    }
-
-    .muted { color: var(--muted); }
-
-    .faq-item {
-      margin-top: 48px;
-      padding-top: 32px;
-      border-top: 1px solid var(--line);
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 48px 24px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-  </style>
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 60px 20px;
+  border-top: 1px solid #1a1a1a;
+  color: #999;
+}
+</style>
 </head>
 
 <body>
 
-<nav>
+<header class="site-header">
   <div class="nav-inner">
-    <div class="nav-brand">
-      <img src="logo.png" alt="Deathforged Academy Logo" />
-      DEATHFORGED ACADEMY
-    </div>
-    <div class="nav-links">
+    <div class="brand">DEATHFORGED ACADEMY</div>
+    <nav class="main-nav">
       <a href="index.html">Home</a>
-      <a href="index.html#logs">Log Reviews</a>
+      <a href="log-reviews.html">Log Reviews</a>
+      <div class="dropdown">
+        <span class="dropdown-label">Talent Calculator</span>
+        <div class="dropdown-menu">
+          <a href="blood-dk-talents.html">Blood</a>
+          <a href="frost-dk-talents.html">Frost</a>
+          <a href="unholy-dk-talents.html">Unholy</a>
+        </div>
+      </div>
+      <a href="dk-abilities.html">Ability Reference</a>
       <a href="faq.html">FAQ</a>
-    </div>
+      <a href="certification.html">Certification</a>
+    </nav>
   </div>
-</nav>
+</header>
 
-<section>
-  <div class="container">
-    <h1>CLIENT FAQ</h1>
-    <p class="muted">
-      Read this before requesting services. It answers the most common questions and sets expectations clearly.
-    </p>
+<div class="container">
+  <h1>Frequently Asked Questions</h1>
 
-    <div class="faq-item">
-      <h2>What services do you offer?</h2>
-      <p class="muted">
-        Deathforged Academy provides Diagnostic Log Reviews, Full Performance Reviews,
-        and Coaching Reviews for Death Knight specializations.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h2>Do you review logs in public Discord channels?</h2>
-      <p class="muted">
-        No. Public channels are for discussion only. All log analysis and performance
-        breakdowns are provided exclusively to Active Clients.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h2>What do I need to submit for a log review?</h2>
-      <p class="muted">
-        Character name and realm, specialization, Warcraft Logs link,
-        specific encounters or runs, and your primary performance goal.
-        Incomplete submissions delay the review.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h2>How long does a review take?</h2>
-      <p class="muted">
-        Diagnostic reviews typically take 48–72 hours. Full reviews take 5-7 days.
-        Coaching reviews are scheduled based on availability of both parties.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h2>Does purchasing a review guarantee certification?</h2>
-      <p class="muted">
-        No. Certification is awarded only when defined performance standards are met.
-        Services provide feedback and correction focused on improvement.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h2>Can I ask follow-up questions?</h2>
-      <p class="muted">
-        Clarifying questions related to your review are allowed. Ongoing coaching,
-        additional analysis, or new encounters require a new service.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h2>Do you review other classes?</h2>
-      <p class="muted">
-        No. Deathforged Academy focuses exclusively on Blood, Frost,
-        and Unholy Death Knights. Intentionally and unapologetically DK.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h2>Can I get a quick opinion instead of a review?</h2>
-      <p class="muted">
-        No. Quick opinions create unclear expectations and low-value outcomes.
-        Proper review exists to provide structured, and actionable feedback coupled with growth.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h2>What makes this different from free advice?</h2>
-      <p class="muted">
-        Free advice is generic and unaccountable. Deathforged Academy provides
-        structured analysis, evidence-based corrections, and clear standards.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h2>Who decides certification?</h2>
-      <p class="muted">
-        Certification decisions are made solely by Deathforged Academy
-        based on documented performance and defined criteria.
-      </p>
-    </div>
-
-    <div class="faq-item">
-      <h2>What if I disagree with feedback?</h2>
-      <p class="muted">
-        You are free to disagree. Certification standards and decisions are not negotiated but failures and areas of improvement are always communicated clearly.
-      </p>
-    </div>
-
+  <div class="faq-item">
+    <strong>What classes do you cover?</strong>
+    <p>Death Knights only. Blood, Frost, and Unholy are treated as distinct disciplines.</p>
   </div>
-</section>
+
+  <div class="faq-item">
+    <strong>Do you provide “best build” templates?</strong>
+    <p>No. Builds are context-dependent. Execution quality matters more than static presets.</p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Are log reviews automated?</strong>
+    <p>No. Every review is performed manually, with written or recorded feedback.</p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Do I need to join Discord?</strong>
+    <p>Discord is optional for public access. Private feedback and follow-up discussions occur there.</p>
+  </div>
+
+  <div class="faq-item">
+    <strong>Is certification guaranteed?</strong>
+    <p>No. Certification is assessment-based and must be earned through demonstrated mastery.</p>
+  </div>
+</div>
 
 <footer>
-  <p>Clarity first. Standards always. Progress is Key.</p>
-  <p>© Deathforged Academy</p>
+  Mastery Is Proven.
 </footer>
 
 </body>
