@@ -3,242 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Death Knight Ability Reference | Deathforged Academy</title>
-
-<!-- WOWHEAD TOOLTIPS -->
-<script>
-  var whTooltips = { colorLinks: true, iconizeLinks: true, renameLinks: false };
-</script>
-<script src="https://wow.zamimg.com/widgets/power.js"></script>
-
+<title>Death Knight Abilities</title>
 <style>
-:root {
-  --bg:#0B0B0B;
-  --fg:#FFFFFF;
-  --muted:#B5B5B5;
-  --line:#1F1F1F;
-
-  --blood:#8B0000;
-  --bloodGlow:rgba(139,0,0,0.35);
-
-  --frost:#6FA8DC;
-  --frostGlow:rgba(111,168,220,0.35);
-
-  --unholy:#5B8A3C;
-  --unholyGlow:rgba(91,138,60,0.35);
-}
-
-* { box-sizing:border-box; }
-/* === TEXTURE SYSTEM === */
-
-/* Global ash grain */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("texture-ash.png");
-  background-repeat: repeat;
-  opacity: 0.06;              /* subtle, premium */
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Keep content above textures */
-body > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Rune impressions — opt-in via .rune-layer */
-.rune-layer::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("texture-runes.png");
-  background-repeat: repeat;
-  opacity: 0.05;              /* extremely restrained */
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Ensure section content sits above rune layer */
-.rune-layer > * {
-  position: relative;
-  z-index: 1;
-}
-
-body {
-  margin:0;
-  background:var(--bg);
-  color:var(--fg);
-  font-family:system-ui,-apple-system,Segoe UI,Inter,sans-serif;
-  line-height:1.6;
-}
-
-a { color:var(--fg); text-decoration:none; }
-
-nav {
-  border-bottom:1px solid var(--line);
-  background:#0B0B0B;
-}
-
-.nav-inner {
-  max-width:1200px;
-  margin:auto;
-  padding:14px 24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.nav-links a {
-  margin-left:24px;
-  font-size:0.85rem;
-  color:var(--muted);
-}
-
-.nav-links a:hover { color:var(--fg); }
-
-section {
-  padding:96px 24px;
-  border-top:1px solid var(--line);
-}
-
-.container {
-  max-width:1100px;
-  margin:auto;
-}
-<section class="rune-layer">
-  <div class="container">
-    ...
-  </div>
-</section>
-
-h1, h2 {
-  letter-spacing:0.06em;
-  font-weight:600;
-}
-
-.muted { color:var(--muted); }
-
-.spec-header {
-  padding:24px;
-  margin-top:72px;
-  border:1px solid var(--line);
-}
-
-.blood { box-shadow:0 0 32px var(--bloodGlow); border-color:var(--blood); }
-.frost { box-shadow:0 0 32px var(--frostGlow); border-color:var(--frost); }
-.unholy { box-shadow:0 0 32px var(--unholyGlow); border-color:var(--unholy); }
-
-.ability-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:24px;
-  margin-top:32px;
-}
-
-.ability {
-  padding:16px;
-  border:1px solid var(--line);
-  background:#111;
-}
-
-.ability p {
-  margin:8px 0 0;
-  font-size:0.85rem;
-  color:var(--muted);
-}
-
-footer {
-  border-top:1px solid var(--line);
-  padding:48px 24px;
-  text-align:center;
-  font-size:0.85rem;
-  color:var(--muted);
-}
+body { margin:0; font-family:system-ui; background:#0b0b0b; color:#f5f5f5; }
+.container { max-width:1100px; margin:auto; padding:80px 20px; }
+.section { margin-top:60px; }
+.section h2 { border-bottom:1px solid #1a1a1a; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; }
+.card { border:1px solid #1a1a1a; padding:16px; background:#111; }
+.blood h2{color:#b00000;}
+.frost h2{color:#5faaff;}
+.unholy h2{color:#4caf50;}
 </style>
 </head>
 
 <body>
+<header class="site-header">…(IDENTICAL HEADER)…</header>
 
-<nav>
-  <div class="nav-inner">
-    <strong>DEATHFORGED ACADEMY</strong>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="blood-dk-talents.html">Talent Calculator</a>
-    </div>
-  </div>
-</nav>
-
-<section>
 <div class="container">
+<h1>Death Knight Ability Reference</h1>
 
-<h1>DEATH KNIGHT — ABILITY REFERENCE</h1>
-<p class="muted">
-Curated reference of core abilities, cooldowns, and utility.
-If it’s listed here, you are expected to understand it.
-</p>
-
-<!-- GENERAL -->
-<h2>ALL DEATH KNIGHTS</h2>
-
-<div class="ability-grid">
-  <div class="ability"><a href="https://www.wowhead.com/spell=48707">Anti-Magic Shell</a><p>Magic mitigation and resource generation.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=48743">Death Pact</a><p>Emergency self-heal with consequences.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=47528">Mind Freeze</a><p>Interrupt responsibility is mandatory.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=49576">Death Grip</a><p>Positional control tool.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=45524">Chains of Ice</a><p>Movement control.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=3714">Path of Frost</a><p>Utility awareness check.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=48265">Death's Advance</a><p>Movement control and immunity.</p></div>
+<div class="section">
+<h2>Core Abilities</h2>
+<div class="grid">
+<div class="card">Death Strike</div>
+<div class="card">Anti-Magic Shell</div>
+<div class="card">Death Grip</div>
+<div class="card">Mind Freeze</div>
+<div class="card">Icebound Fortitude</div>
+</div>
 </div>
 
-<!-- BLOOD -->
-<div class="spec-header blood"><h2>BLOOD DEATH KNIGHT</h2></div>
-
-<div class="ability-grid">
-  <div class="ability"><a href="https://www.wowhead.com/spell=49998">Death Strike</a><p>Primary survivability tool.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=49028">Dancing Rune Weapon</a><p>Core defensive cooldown.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=55233">Vampiric Blood</a><p>Healing amplification.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=48792">Icebound Fortitude</a><p>Damage reduction.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=221699">Blooddrinker</a><p>Channel-based sustain.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=206931">Blood Boil</a><p>AoE threat and disease spread.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=108199">Gorefiend’s Grasp</a><p>Mass positional control.</p></div>
+<div class="section blood">
+<h2>Blood</h2>
+<div class="grid">
+<div class="card">Dancing Rune Weapon</div>
+<div class="card">Vampiric Blood</div>
+<div class="card">Blood Boil</div>
+</div>
 </div>
 
-<!-- FROST -->
-<div class="spec-header frost"><h2>FROST DEATH KNIGHT</h2></div>
-
-<div class="ability-grid">
-  <div class="ability"><a href="https://www.wowhead.com/spell=49143">Frost Strike</a><p>Runic Power spender.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=49020">Obliterate</a><p>Primary rune spender.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=51271">Pillar of Frost</a><p>Main burst cooldown.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=152279">Breath of Sindragosa</a><p>Sustained burst window.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=47568">Empower Rune Weapon</a><p>Resource reset.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=207230">Frostscythe</a><p>AoE alternative spender.</p></div>
+<div class="section frost">
+<h2>Frost</h2>
+<div class="grid">
+<div class="card">Breath of Sindragosa</div>
+<div class="card">Pillar of Frost</div>
+<div class="card">Obliterate</div>
+</div>
 </div>
 
-<!-- UNHOLY -->
-<div class="spec-header unholy"><h2>UNHOLY DEATH KNIGHT</h2></div>
-
-<div class="ability-grid">
-  <div class="ability"><a href="https://www.wowhead.com/spell=77575">Plague Strike</a><p>Disease application.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=63560">Dark Transformation</a><p>Pet empowerment.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=275699">Apocalypse</a><p>Ghoul burst window.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=207289">Unholy Assault</a><p>Setup amplifier.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=85948">Festering Strike</a><p>Wound generation.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=47541">Death Coil</a><p>Runic Power spender.</p></div>
-  <div class="ability"><a href="https://www.wowhead.com/spell=42650">Army of the Dead</a><p>Major cooldown commitment.</p></div>
+<div class="section unholy">
+<h2>Unholy</h2>
+<div class="grid">
+<div class="card">Dark Transformation</div>
+<div class="card">Army of the Dead</div>
+<div class="card">Scourge Strike</div>
+</div>
 </div>
 
 </div>
-</section>
 
-<footer>
-<p>Mastery Is Proven.</p>
-<p>© Deathforged Academy</p>
-</footer>
-
+<footer>Mastery Is Proven.</footer>
 </body>
 </html>
