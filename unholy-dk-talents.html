@@ -1,107 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unholy Death Knight Talents | Deathforged Academy</title>
-  <meta name="description" content="Unholy Death Knight talent philosophy and recommended builds with Wowhead links and in-game import strings." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unholy DK Talents | Deathforged Academy</title>
 
-  <style>
-    body {
-      margin: 0;
-      background: #0B0B0B;
-      color: #FFFFFF;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
-      line-height: 1.65;
-    }
-    a { color: #FFFFFF; text-decoration: none; }
-    h1, h2 { letter-spacing: 0.06em; }
-    section { padding: 96px 24px; border-top: 1px solid #1F1F1F; }
-    .container { max-width: 1000px; margin: 0 auto; }
-    .muted { color: #B5B5B5; }
-    .block {
-      margin-top: 48px;
-      padding: 32px;
-      border: 1px solid #1F1F1F;
-      background: #111111;
-    }
-    .import {
-      margin-top: 24px;
-      padding: 16px;
-      background: #000;
-      font-family: monospace;
-      color: #B5B5B5;
-      overflow-x: auto;
-    }
-    footer {
-      border-top: 1px solid #1F1F1F;
-      padding: 48px 24px;
-      text-align: center;
-      color: #B5B5B5;
-    }
-  </style>
+<style>
+:root {
+  --accent:#5B8A3C;
+  --glow:rgba(91,138,60,0.35);
+}
+body{
+  margin:0;
+  background:radial-gradient(circle at top,var(--glow),#0B0B0B 60%);
+  color:#fff;
+  font-family:system-ui,Segoe UI,Inter,sans-serif;
+}
+a{color:#fff;text-decoration:none}
+nav{border-bottom:1px solid #1F1F1F;background:#0B0B0B}
+.nav-inner{max-width:1200px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between}
+.nav-links a{margin-left:24px;color:#B5B5B5}
+.nav-links a:hover{color:#fff}
+section{padding:96px 24px;border-top:1px solid #1F1F1F}
+.container{max-width:1000px;margin:auto}
+h1,h2{letter-spacing:.06em}
+.muted{color:#B5B5B5}
+.block{
+  margin-top:48px;
+  padding:32px;
+  border:1px solid var(--accent);
+  background:#111;
+  box-shadow:0 0 24px var(--glow);
+}
+.import{background:#000;padding:16px;font-family:monospace;margin-top:16px;color:#B5B5B5}
+footer{text-align:center;padding:48px 24px;border-top:1px solid #1F1F1F;color:#B5B5B5}
+</style>
 </head>
 
 <body>
 
-<section>
-  <div class="container">
-    <h1>UNHOLY DEATH KNIGHT — TALENT PHILOSOPHY</h1>
-    <p class="muted">
-      Unholy talent selections emphasize setup discipline, sustained damage,
-      and controlled cooldown stacking.
-    </p>
-
-    <h2>BUILD INTENT</h2>
-    <p class="muted">
-      Unholy performance is defined by preparation. Talents are chosen to support
-      reliable setup execution and long-duration pressure.
-    </p>
-
-    <h2>MYTHIC+</h2>
-    <p class="muted">
-      Mythic+ builds favor disease uptime, efficient cleave scaling,
-      and stable damage across chained pulls.
-    </p>
-
-    <h2>RAID</h2>
-    <p class="muted">
-      Raid builds prioritize transformation alignment, pet control,
-      and disciplined execution of planned damage windows.
-    </p>
-
-    <div class="block">
-      <h2>RECOMMENDED TALENT BUILD</h2>
-      <p>
-        <a href="INSERT-PERSISTENT-WOWHEAD-UNHOLY-BUILD-LINK" target="_blank">
-          Open Recommended Build on Wowhead
-        </a>
-      </p>
+<nav>
+  <div class="nav-inner">
+    <strong>DEATHFORGED ACADEMY</strong>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="dk-abilities.html">Ability Reference</a>
+      <a href="blood-dk-talents.html">Blood</a>
+      <a href="frost-dk-talents.html">Frost</a>
     </div>
-
-    <div class="block">
-      <h2>EXPLORE ALTERNATIVES</h2>
-      <p>
-        <a href="https://www.wowhead.com/talent-calc/death-knight/unholy" target="_blank">
-          Open Blank Unholy DK Talent Calculator
-        </a>
-      </p>
-    </div>
-
-    <div class="block">
-      <h2>IN-GAME TALENT IMPORT</h2>
-      <div class="import">
-        INSERT-UNHOLY-DK-IMPORT-STRING-HERE
-      </div>
-    </div>
-
   </div>
+</nav>
+
+<section>
+<div class="container">
+<h1>UNHOLY DEATH KNIGHT — TALENTS</h1>
+<p class="muted">Setup discipline, sustained pressure, transformation control.</p>
+
+<h2>Build Intent</h2>
+<p class="muted">Unholy talents reward preparation and punish sloppy execution.</p>
+
+<h2>Mythic+</h2>
+<p class="muted">Stable cleave, disease uptime, and pull-to-pull consistency.</p>
+
+<h2>Raid</h2>
+<p class="muted">Transformation timing and pet management are non-negotiable.</p>
+
+<div class="block">
+<h2>Recommended Build</h2>
+<a href="INSERT-UNHOLY-WOWHEAD-LINK" target="_blank">Open Recommended Build on Wowhead</a>
+</div>
+
+<div class="block">
+<h2>Explore Alternatives</h2>
+<a href="https://www.wowhead.com/talent-calc/death-knight/unholy" target="_blank">Open Blank Unholy Calculator</a>
+</div>
+
+<div class="block">
+<h2>In-Game Import</h2>
+<div class="import">INSERT-UNHOLY-IMPORT-STRING</div>
+</div>
+
+</div>
 </section>
 
-<footer>
-  <p>Mastery Is Proven.</p>
-  <p>© Deathforged Academy</p>
-</footer>
-
+<footer><p>Mastery Is Proven.</p></footer>
 </body>
 </html>
