@@ -9,7 +9,44 @@
 :root {
   --accent:#8B0000;
   --glow:rgba(139,0,0,0.35);
+}/* === TEXTURE SYSTEM === */
+
+/* Global ash grain */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("texture-ash.png");
+  background-repeat: repeat;
+  opacity: 0.06;              /* subtle, premium */
+  pointer-events: none;
+  z-index: 0;
 }
+
+/* Keep content above textures */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Rune impressions — opt-in via .rune-layer */
+.rune-layer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("texture-runes.png");
+  background-repeat: repeat;
+  opacity: 0.05;              /* extremely restrained */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure section content sits above rune layer */
+.rune-layer > * {
+  position: relative;
+  z-index: 1;
+}
+
 body{
   margin:0;
   background:radial-gradient(circle at top,var(--glow),#0B0B0B 60%);
